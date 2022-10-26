@@ -3,16 +3,14 @@
     <!--BANNER AREA-->
     <div
       class="header__banner"
-      [ngStyle]="{
-        'background-image':
-          'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(' +
-          headerBGUrl +
-          ')'
-      }"
+      style="
+        background-image: url('https://lh4.googleusercontent.com/lxqs15jK_ca6andaKan0g0tDwunInLB9jrye3_UtdZ3GCGt13mYHQ7Rrsko49NHF6NPlvNHQVpZfdt4=s1920');
+        background-position: 50% calc(50% + 100px);
+      "
     >
-      <h2>{{ trending?.results[0].title }}</h2>
+      <h2>Julia i Paweł</h2>
       <div class="header__buttons">
-        <button class="play-button" (click)="(onClickPlay)">
+        <button class="play-button">
           <mat-icon>arrow_right</mat-icon>
           <span>Play</span>
         </button>
@@ -59,7 +57,7 @@
           </li>
           <li>
             <img
-              src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABRGTK96GBeqNw5zzYXnoa8oVjSjhuk7SuseuKTmgEKwpcCB59994UWb6wd7d1WONZOuzJwbLNpzG5Okfo4rSDLg.png?r=ee6"
+              src="https://lh4.googleusercontent.com/o9kuC6BHyklswYO0GbdZHWB8pZ0h_lwtNOhsIpe08B-P4jBG1qYaMvWwrCdYXsboOIJx5qI7h1VfCxA=s50"
               alt="avatar"
             />
           </li>
@@ -71,28 +69,8 @@
 
   <div class="body" style="margin-top: 30rem">
     <app-slider
-      title="Trending"
-      [movies]="trending"
-      [sliderConfig]="sliderConfig"
-    ></app-slider>
-    <app-slider
-      title="Top Rated"
-      [movies]="topRated"
-      [sliderConfig]="sliderConfig"
-    ></app-slider>
-    <app-slider
-      title="Now Playing"
-      [movies]="nowPlaying"
-      [sliderConfig]="sliderConfig"
-    ></app-slider>
-    <app-slider
-      title="Originals"
-      [movies]="originals"
-      [sliderConfig]="sliderConfig"
-    ></app-slider>
-    <app-slider
-      title="Popular"
-      [movies]="popular"
+      *ngFor="let category of categories; index as i"
+      [category]="category"
       [sliderConfig]="sliderConfig"
     ></app-slider>
   </div>

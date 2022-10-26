@@ -1,11 +1,21 @@
-<h2>{{title}}</h2>
+<h2>{{ category.name }}</h2>
 
 <div class="movie">
   <div class="movie__images">
     <div class="thumbnails">
       <ngx-slick-carousel [config]="sliderConfig" class="carousel">
-        <div class="slick-item" *ngFor="let m of movies.results" ngxSlickItem>
-          <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}">
+        <div
+          class="slick-item"
+          *ngFor="let m of category.movies"
+          style="width: 250px; height: 150px; object-fit: cover"
+          ngxSlickItem
+        >
+          <img
+            *ngIf="m != undefined && m.content != undefined"
+            style="width: 250px; height: 150px; object-fit: cover"
+            [src]="m.content"
+            alt="{{ m.title }}"
+          />
         </div>
       </ngx-slick-carousel>
     </div>

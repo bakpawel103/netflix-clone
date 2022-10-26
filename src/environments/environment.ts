@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+  baseUrl: 'http://localhost:3000',
   CLIENT_ID:
     '475361612508-lde6b36g0b82tdoguf9v76n0gscv9fv1.apps.googleusercontent.com',
   CLIENT_SECRET: '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',
