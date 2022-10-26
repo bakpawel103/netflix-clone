@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Movies } from './models/movies';
-import { AuthService } from './services/auth.service';
 import { MovieService } from './services/movie.service';
 
 @Component({
@@ -36,7 +35,7 @@ export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('stickHeader') header: ElementRef;
   headerBGUrl: string;
 
-  constructor(private movie: MovieService, private auth: AuthService) {}
+  constructor(private movie: MovieService) {}
 
   ngOnInit(): void {
     this.subs.push(
@@ -76,7 +75,5 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  onClickPlay() {
-    this.auth.loadFiles();
-  }
+  onClickPlay() {}
 }

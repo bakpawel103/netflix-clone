@@ -4,17 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { SliderComponent } from './components/slider/slider.component';
-import {SlickCarouselModule} from 'ngx-slick-carousel';
-import {HttpClientModule} from '@angular/common/http';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent
-  ],
+  declarations: [AppComponent, SliderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,9 +19,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatBadgeModule,
     SlickCarouselModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
